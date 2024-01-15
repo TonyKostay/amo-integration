@@ -13,6 +13,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->group(['namespace'=>'Api\AmoCrm'], function () use ($router) {
+    $router->get('/', 'AuthController');
+    $router->post('/amocrm-webhook', 'ApiController@webhookListener');
 });
