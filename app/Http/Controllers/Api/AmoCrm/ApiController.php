@@ -25,7 +25,6 @@ class ApiController extends Controller
      */
     public function webhookListener(Request $request): void
     {
-        //Log::info(json_encode($request->post(), JSON_UNESCAPED_UNICODE));
         $this->webhookProcessor->process($request->post());
     }
 }
